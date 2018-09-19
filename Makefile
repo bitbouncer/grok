@@ -8,7 +8,7 @@ FORCE_FLEX?=0
 ifeq ($(PLATFORM), FreeBSD)
 PREFIX?=/usr/local
 else
-PREFIX?=/usr
+PREFIX?=/usr/local
 endif
 
 ifeq ($(PLATFORM), Darwin)
