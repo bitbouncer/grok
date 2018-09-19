@@ -213,10 +213,10 @@ grok_capture_xdr.h: grok_capture.x
 	rpcgen -h $< -o $@
 
 %.c: %.gperf
-	@if $(GPERF) --version | head -1 | egrep -v '3\.[0-9]+\.[0-9]+' ; then \
-		echo "We require gperf version >= 3.0.3" ; \
+	@if $(GPERF) --version | head -1 | grep --quiet -E '[0-2]\.[0-9]\.[0-9]+|3\.0\.[0-9]+' ; then \
+		echo "We require gperf version >= 3.1.0" ; \
 		exit 1; \
-	fi
+ 	fi
 	$(GPERF) $< > $@
 
 conf.tab.c conf.tab.h: conf.y
