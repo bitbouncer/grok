@@ -96,7 +96,8 @@ install: libgrok.$(LIBSUFFIX) grok discogrok $(GROKHEADER)
 	install -d $(DESTDIR)$(PREFIX)/include
 	install -m 755 grok $(DESTDIR)$(PREFIX)/bin
 	install -m 755 discogrok $(DESTDIR)$(PREFIX)/bin
-	install -m 644 libgrok.$(VERLIBSUFFIX) $(DESTDIR)$(PREFIX)/lib
+	install -m 755 libgrok.$(LIBSUFFIX) $(DESTDIR)$(PREFIX)/lib
+	install -m 755 libgrok.$(VERLIBSUFFIX) $(DESTDIR)$(PREFIX)/lib
 	for header in $(GROKHEADER); do \
 		install -m 644 $$header $(DESTDIR)$(PREFIX)/include; \
 	done 
